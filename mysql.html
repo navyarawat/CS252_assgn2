@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CS252 Lab</title>
+</head>
+<body>
+<h1>Welcome to Employees Query Interface</h1>
+<h3>Query by Employee Details</h3>
+<form method="post" action="query1.php">
+	<select name="type">
+    <option value="1">Employee Id</option>
+    <option value="2">Last Name</option>
+    <option value="3">Department</option>
+  </select>
+  <br><br>
+  <input type="text" name="query_val" placeholder="Enter the value of the field to query">
+  <input type="submit">
+</form>
+<h3>Query by Department Details</h3>
+<form method="post" action="query2.php">
+	<select name="type">
+    <option value="1">Order departments by emp. coount</option>
+    <option value="2">Order employees in a department by tenure</option>
+    <option value="3">Query Gender Ratio</option>
+    <option value="4">Query Gender pay Ratio</option>
+  </select>
+  <br><br>
+  <input type="text" name="query_val" placeholder="Enter the Department Name">
+  <input type="submit">
+</form>
+</body>
+</html>
