@@ -65,25 +65,25 @@
 
                     $sql_in = "SELECT COUNT(employees.emp_no) FROM employees
                         INNER JOIN dept_emp ON dept_emp.emp_no=employees.emp_no
-                        where  dept_emp.to_date > '20180930' and dept_emp.dept_no = '".$dept."';" .
+                        where  dept_emp.to_date > '{$date_now}' and dept_emp.dept_no = '".$dept."';" .
 // date("Y-m-d")   dept_emp.to_date >". date("Y-m-d") . " and
                     "SELECT COUNT(employees.emp_no) FROM employees
                     INNER JOIN dept_emp ON dept_emp.emp_no=employees.emp_no
-                    where dept_emp.to_date > '20180930' and employees.gender = 'M' and dept_emp.dept_no = '".$dept."';" .
+                    where dept_emp.to_date > '{$date_now}' and employees.gender = 'M' and dept_emp.dept_no = '".$dept."';" .
 
                     "SELECT COUNT(employees.emp_no) FROM employees
                     INNER JOIN dept_emp ON dept_emp.emp_no=employees.emp_no
-                    where dept_emp.to_date > '20180930' and employees.gender = 'F' and dept_emp.dept_no = '".$dept."';" .
+                    where dept_emp.to_date > '{$date_now}' and employees.gender = 'F' and dept_emp.dept_no = '".$dept."';" .
 
                     "SELECT SUM(salaries.salary) FROM employees
                     INNER JOIN dept_emp ON dept_emp.emp_no=employees.emp_no
                     INNER JOIN salaries ON salaries.emp_no=employees.emp_no
-                    where dept_emp.to_date > '20180930' and employees.gender = 'M' and dept_emp.dept_no = '".$dept."';".
+                    where dept_emp.to_date > '{$date_now}' and employees.gender = 'M' and dept_emp.dept_no = '".$dept."';".
 
                     "SELECT SUM(salaries.salary) FROM employees
                     INNER JOIN dept_emp ON dept_emp.emp_no=employees.emp_no
                     INNER JOIN salaries ON salaries.emp_no=employees.emp_no
-                    where dept_emp.to_date > '20180930' and employees.gender = 'F' and dept_emp.dept_no = '".$dept."';" ;
+                    where dept_emp.to_date > '{$date_now}' and employees.gender = 'F' and dept_emp.dept_no = '".$dept."';" ;
 
                     //
                     //     "SELECT COUNT(ID) FROM employees where gender = 'F' and DEPT = '".$dept."';".
