@@ -14,26 +14,25 @@ if($search_type == "id"){
 //     SELECT Orders.OrderID, Customers.CustomerName, Orders.OrderDate
 //
 // INNER JOIN Customers ON Orders.CustomerID=Customers.CustomerID;
-    $date_now = date("Ymd");
-
+    
 	$sql = "SELECT * FROM employees
         INNER JOIN dept_emp ON dept_emp.emp_no=employees.emp_no
-        where dept_emp.to_date > '{$date_now}' and employees.emp_no=".$_GET["id"]." ORDER BY ('{$date_now}' - employees.hire_date) DESC";
+        where dept_emp.to_date > '20180930' and employees.emp_no=".$_GET["id"]." ORDER BY ('20180930' - employees.hire_date) DESC";
 }
 else if($search_type == "lastname"){
 
 	$sql = "SELECT * FROM employees
         INNER JOIN dept_emp ON dept_emp.emp_no=employees.emp_no
-    where dept_emp.to_date > '{$date_now}' and employees.last_name='".$_GET["lastname"]."' ORDER BY ('{$date_now}' - employees.hire_date) DESC";
+    where dept_emp.to_date > '20180930' and employees.last_name='".$_GET["lastname"]."' ORDER BY ('20180930' - employees.hire_date) DESC";
 }
 else if($search_type == "dept"){
 	$sql = "SELECT * FROM employees
         INNER JOIN dept_emp ON dept_emp.emp_no=employees.emp_no
-         where dept_emp.to_date > '{$date_now}' and dept_emp.dept_no='".$_GET["dept"]."' ORDER BY ('{$date_now}' - employees.hire_date) DESC";
+         where dept_emp.to_date > '20180930' and dept_emp.dept_no='".$_GET["dept"]."' ORDER BY ('20180930' - employees.hire_date) DESC";
 }
 elseif ($search_type = "alldata") {
     $sql = "SELECT * FROM employees
-    INNER JOIN dept_emp ON dept_emp.emp_no=employees.emp_no where dept_emp.to_date > '{$date_now}' ";
+    INNER JOIN dept_emp ON dept_emp.emp_no=employees.emp_no where dept_emp.to_date > '20180930' ";
 }
 
 // $sql = "SELECT * FROM EMPLOYEES";
