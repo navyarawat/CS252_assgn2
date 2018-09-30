@@ -31,7 +31,8 @@ else if($search_type == "dept"){
          where dept_emp.dept_no='".$_GET["dept"]."' ORDER BY employees.hire_date DESC";
 }
 elseif ($search_type = "alldata") {
-    $sql = "SELECT * FROM employees ";
+    $sql = "SELECT * FROM employees
+    INNER JOIN dept_emp ON dept_emp.emp_no=employees.emp_no";
 }
 
 // $sql = "SELECT * FROM EMPLOYEES";
