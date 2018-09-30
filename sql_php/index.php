@@ -57,7 +57,7 @@
                  die("Connection failed: " . $conn->connect_error);
               }
               echo '<script>console.log(Connected successfully)</script>';
-      		$sql = "SELECT DISTINCT dept_no FROM departments";
+      		$sql = "SELECT DISTINCT dept_no FROM departments ORDER BY dept_no";
             $result = $conn->query($sql);
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()){
@@ -79,7 +79,7 @@
                     INNER JOIN dept_emp ON dept_emp.emp_no=employees.emp_no
                     INNER JOIN salaries ON salaries.emp_no=employees.emp_no
                     where employees.gender = 'M' and dept_emp.dept_no = '".$dept."';".
-                    
+
                     "SELECT SUM(salaries.salary) FROM employees
                     INNER JOIN dept_emp ON dept_emp.emp_no=employees.emp_no
                     INNER JOIN salaries ON salaries.emp_no=employees.emp_no
